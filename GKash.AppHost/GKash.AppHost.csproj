@@ -14,11 +14,14 @@
     <ProjectReference Include="..\GKash.ApiService\GKash.ApiService.csproj" />
     <ProjectReference Include="..\GKash.Web\GKash.Web.csproj" />
     <ProjectReference Include="..\UserService.API\UserService.API.csproj" />
+    <ProjectReference Include="..\UserService.Infrastructure\UserService.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Aspire.Hosting.AppHost" Version="9.5.0" />
     <PackageReference Include="Aspire.Hosting.Redis" Version="9.5.0" />
+    <PackageReference Include="Aspire.Hosting.SqlServer" Version="13.0.0" />
+    <PackageReference Include="Aspire.Microsoft.Data.SqlClient" Version="13.0.0" />
   </ItemGroup>
 
 </Project>
