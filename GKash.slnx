@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/1.UserService/">
+    <Project Path="UserService.API/UserService.API.csproj" />
+    <Project Path="UserService.Application/UserService.Application.csproj" />
+    <Project Path="UserService.Domain/UserService.Domain.csproj" />
+    <Project Path="UserService.Infrastructure/UserService.Infrastructure.csproj" />
+  </Folder>
+  <Project Path="GKash.ApiService/GKash.ApiService.csproj" />
+  <Project Path="GKash.AppHost/GKash.AppHost.csproj" />
+  <Project Path="GKash.ServiceDefaults/GKash.ServiceDefaults.csproj" />
+  <Project Path="GKash.Tests/GKash.Tests.csproj" />
+  <Project Path="GKash.Web/GKash.Web.csproj" />
+</Solution>
