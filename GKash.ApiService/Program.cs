@@ -1,3 +1,4 @@
+using LoanRepayment.Infrastructure.Persistence;
 using LoanService.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using UserService.Infrastructure.Persistance;
@@ -9,6 +10,8 @@ builder.AddServiceDefaults();
 builder.Services.AddDbContext<UserDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("GkashDbConnection")));
 builder.Services.AddDbContext<LoanDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("GkashDbConnection")));
+builder.Services.AddDbContext<RepaymentDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("GkashDbConnection")));
 // Add services to the container.
 builder.Services.AddProblemDetails();
@@ -26,27 +29,7 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-string[] summaries = ["Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"];
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
-
 app.MapDefaultEndpoints();
 
 app.Run();
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

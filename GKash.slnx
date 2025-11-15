@@ -12,6 +12,12 @@
     <Project Path="LoanService.Domain/LoanService.Domain.csproj" Id="4bac74a6-e1d0-4595-a2f2-aa8993e74e97" />
     <Project Path="LoanService.Infrastructure/LoanService.Infrastructure.csproj" Id="8b795584-19ca-4bd9-937a-f0dbdd3b8e8f" />
   </Folder>
+  <Folder Name="/src/3.LoanRepaymentService/">
+    <Project Path="LoanRepayment.API/LoanRepayment.API.csproj" />
+    <Project Path="LoanRepayment.Application/LoanRepayment.Application.csproj" Id="ddc4d06b-0ed4-47a1-a071-496afe060881" />
+    <Project Path="LoanRepayment.Domain/LoanRepayment.Domain.csproj" Id="152fedc4-1004-41ba-a770-fc6ddc33d84e" />
+    <Project Path="LoanRepayment.Infrastructure/LoanRepayment.Infrastructure.csproj" Id="00b7d6f9-e717-435a-946d-79e9931ea229" />
+  </Folder>
   <Project Path="GKash.ApiService/GKash.ApiService.csproj" />
   <Project Path="GKash.AppHost/GKash.AppHost.csproj" />
   <Project Path="GKash.ServiceDefaults/GKash.ServiceDefaults.csproj" />

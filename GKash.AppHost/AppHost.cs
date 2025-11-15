@@ -6,7 +6,6 @@ var sqlConnection = builder.AddSqlServer("GkashDbConnection")
                  .WithDataVolume()
                  .AddDatabase("GKashDb");
 
-
 var apiService = builder.AddProject<Projects.GKash_ApiService>("apiservice")
     .WithHttpHealthCheck("/health");
 
@@ -18,15 +17,20 @@ builder.AddProject<Projects.GKash_Web>("webfrontend")
     .WithReference(apiService)
     .WaitFor(apiService);
 
-
 builder.AddProject<Projects.UserService_API>("userservice-api")
        .WithReference(sqlConnection)
        .WithReference(cache)
        .WaitFor(sqlConnection);
 
-builder.AddProject<Projects.LoanService_API>("loanservice-api")
+builder.AddProject<Projects.LoanRepayment_API>("loanrepayment-api")
        .WithReference(sqlConnection)
        .WithReference(cache)
        .WaitFor(sqlConnection);
+
+builder.AddProject<Projects.LoanService_API>("loanservice-api")
+      .WithReference(sqlConnection)
+      .WithReference(cache)
+      .WaitFor(sqlConnection);
+
 
 builder.Build().Run();
