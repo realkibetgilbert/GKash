@@ -44,6 +44,7 @@ builder.Services.AddHttpClient("infobip", client =>
 builder.Services.AddScoped<ISmsSender, InfobipSmsSender>();
 builder.Services.AddScoped<IOtpService, OtpService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserProfileRepository, UserProfileRepository>();
 
 // MediatR
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<SendOtpCommand>());

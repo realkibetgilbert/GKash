@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using MediatR;
 
-namespace UserService.Domain.Entities
+namespace UserService.Application.Features.Profile.Commands
 {
-    public class UserProfile
+    public class CompleteUserProfileCommand : IRequest<bool>
     {
-        public long Id { get; set; }
         public long UserId { get; set; }
         public string FirstName { get; set; }
         public string? MiddleName { get; set; }

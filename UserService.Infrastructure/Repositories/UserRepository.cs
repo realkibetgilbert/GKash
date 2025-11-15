@@ -5,7 +5,7 @@ using UserService.Infrastructure.Persistance;
 
 namespace UserService.Infrastructure.Repositories
 {
-    public class UserRepository:IUserRepository
+    public class UserRepository : IUserRepository
     {
         private readonly UserDbContext _ctx;
         public UserRepository(UserDbContext ctx) => _ctx = ctx;
@@ -26,6 +26,11 @@ namespace UserService.Infrastructure.Repositories
         {
             _ctx.Users.Update(user);
             await _ctx.SaveChangesAsync(ct);
+        }
+
+        public async Task<User?> GetByIdAsync(long id, CancellationToken ct = default)
+        {
+            return await _ctx.Users.FirstOrDefaultAsync(u => u.Id == id, ct);
         }
     }
 }
