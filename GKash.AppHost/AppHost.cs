@@ -2,9 +2,10 @@ var builder = DistributedApplication.CreateBuilder(args);
 
 var cache = builder.AddRedis("cache");
 
-var usersSqlConnection = builder.AddSqlServer("UserDbConnection")
+var sqlConnection = builder.AddSqlServer("GkashDbConnection")
                  .WithDataVolume()
                  .AddDatabase("GKashDb");
+
 
 var apiService = builder.AddProject<Projects.GKash_ApiService>("apiservice")
     .WithHttpHealthCheck("/health");
@@ -19,10 +20,13 @@ builder.AddProject<Projects.GKash_Web>("webfrontend")
 
 
 builder.AddProject<Projects.UserService_API>("userservice-api")
-       .WithReference(usersSqlConnection)
+       .WithReference(sqlConnection)
        .WithReference(cache)
-       .WaitFor(usersSqlConnection);
+       .WaitFor(sqlConnection);
 
-builder.AddProject<Projects.LoanService_API>("loanservice-api");
+builder.AddProject<Projects.LoanService_API>("loanservice-api")
+       .WithReference(sqlConnection)
+       .WithReference(cache)
+       .WaitFor(sqlConnection);
 
 builder.Build().Run();
