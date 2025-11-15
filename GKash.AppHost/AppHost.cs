@@ -20,6 +20,7 @@ builder.AddProject<Projects.GKash_Web>("webfrontend")
 
 builder.AddProject<Projects.UserService_API>("userservice-api")
        .WithReference(usersSqlConnection)
+       .WithReference(cache)
        .WaitFor(usersSqlConnection);
 
 builder.Build().Run();

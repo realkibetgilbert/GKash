@@ -8,9 +8,9 @@ namespace UserService.Domain.Entities
     {
         public long Id { get; set; }
         public string PhoneNumber { get; set; } = string.Empty;
+        public bool IsProfileComplete { get; set; }
         public DateTime DateCreated { get; set; }
         public DateTime? LastLogin { get; set; }
 
-        
     }
 }
