@@ -1,5 +1,74 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
+<PageTitle>GKash - Home</PageTitle>
+
+<!-- MainLanding.razor -->
+<div class="hero-section position-relative">
+    
+    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 px-3 px-md-0 hero-text-wrapper">
+
+                    <h1 class="hero-title mb-4 text-black">
+                        Get first loan online<br>
+                        within 15 minutes<br>
+                        Fast and safe apply
+                    </h1>
+
+                    <a class="btn btn-warning text-secondary hero-btn" href="/apply">
+                        Apply for a loan
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
+
+<!-- Advantages section -->
+<div class="container my-5">
+    <h2 class="text-center fw-bold mb-4">Our advantages</h2>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card shadow-sm p-3 text-center">
+                <img src="/icons/secure.svg" class="mx-auto mb-3" width="60">
+                <h5 class="fw-bold">Reliability</h5>
+                <p>We provide secure and fast loan services.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm p-3 text-center">
+                <img src="/icons/stars.svg" class="mx-auto mb-3" width="60">
+                <h5 class="fw-bold">Best Rates</h5>
+                <p>Get competitive rates and flexible repayment.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm p-3 text-center">
+                <img src="/icons/support.svg" class="mx-auto mb-3" width="60">
+                <h5 class="fw-bold">Customer Support</h5>
+                <p>Friendly and fast assistance when you need it.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- IMAGE FILE REMINDER -->
+<!-- Place hero image at: wwwroot/images/loan-hero.jpg -->
+<!-- Place icons at: wwwroot/icons/*.svg -->
+
+@code {
+    // Placeholder array to demonstrate how to render dynamic content later if needed
+    private readonly string[] Highlights = new[]
+    {
+        "Fast API-first design",
+        "Modular microservices",
+        "Blazor UI"
+    };
+}
