@@ -3,6 +3,7 @@ using LoanService.Domain.Enums;
 using LoanService.Domain.Interfaces;
 using MediatR;
 
+
 namespace LoanService.Application.Features.Loans.Handlers
 {
     public class ApproveLoanCommandHandler : IRequestHandler<ApproveLoanCommand, bool>

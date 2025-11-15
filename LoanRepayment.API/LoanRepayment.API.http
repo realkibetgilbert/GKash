@@ -1,0 +1,6 @@
+@LoanRepayment.API_HostAddress = http://localhost:5082
+
+GET {{LoanRepayment.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

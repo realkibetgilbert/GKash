@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\GKash.ApiService\GKash.ApiService.csproj" />
     <ProjectReference Include="..\GKash.Web\GKash.Web.csproj" />
+    <ProjectReference Include="..\LoanRepayment.API\LoanRepayment.API.csproj" />
     <ProjectReference Include="..\LoanService.API\LoanService.API.csproj" />
     <ProjectReference Include="..\UserService.API\UserService.API.csproj" />
     <ProjectReference Include="..\UserService.Infrastructure\UserService.Infrastructure.csproj" />
