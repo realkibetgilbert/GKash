@@ -1,7 +1,26 @@
+using LoanService.Infrastructure.Persistence;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
 
+var connectionString = builder.Configuration.GetConnectionString("LoanDbConnection");
+
+if (string.IsNullOrEmpty(connectionString))
+{
+    Console.ForegroundColor = ConsoleColor.Red;
+    Console.WriteLine("[? Aspire] No connection string was provided!");
+    Console.ResetColor();
+}
+else
+{
+    Console.ForegroundColor = ConsoleColor.Green;
+    Console.WriteLine($"[? Aspire] Connection string injected: {connectionString}");
+    Console.ResetColor();
+}
+builder.Services.AddDbContext<LoanDbContext>(options =>
+    options.UseSqlServer(connectionString));
 // Add services to the container.
 
 builder.Services.AddControllers();

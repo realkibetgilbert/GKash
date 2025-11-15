@@ -1,3 +1,4 @@
+using LoanService.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using UserService.Infrastructure.Persistance;
 
@@ -7,7 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.AddServiceDefaults();
 builder.Services.AddDbContext<UserDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("UserDbConnection")));
-
+builder.Services.AddDbContext<LoanDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("LoanDbConnection")));
 // Add services to the container.
 builder.Services.AddProblemDetails();
 
