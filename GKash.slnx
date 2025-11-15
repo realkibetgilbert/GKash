@@ -6,6 +6,12 @@
     <Project Path="UserService.Domain/UserService.Domain.csproj" />
     <Project Path="UserService.Infrastructure/UserService.Infrastructure.csproj" />
   </Folder>
+  <Folder Name="/src/2.LoanService/">
+    <Project Path="LoanService.API/LoanService.API.csproj" />
+    <Project Path="LoanService.Application/LoanService.Application.csproj" Id="59b5224b-5047-4128-b66b-51f7d7031a40" />
+    <Project Path="LoanService.Domain/LoanService.Domain.csproj" Id="4bac74a6-e1d0-4595-a2f2-aa8993e74e97" />
+    <Project Path="LoanService.Infrastructure/LoanService.Infrastructure.csproj" Id="8b795584-19ca-4bd9-937a-f0dbdd3b8e8f" />
+  </Folder>
   <Project Path="GKash.ApiService/GKash.ApiService.csproj" />
   <Project Path="GKash.AppHost/GKash.AppHost.csproj" />
   <Project Path="GKash.ServiceDefaults/GKash.ServiceDefaults.csproj" />
