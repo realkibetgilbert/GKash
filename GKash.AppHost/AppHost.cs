@@ -23,4 +23,6 @@ builder.AddProject<Projects.UserService_API>("userservice-api")
        .WithReference(cache)
        .WaitFor(usersSqlConnection);
 
+builder.AddProject<Projects.LoanService_API>("loanservice-api");
+
 builder.Build().Run();
