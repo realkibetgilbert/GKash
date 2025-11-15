@@ -1,7 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using UserService.Infrastructure.Persistance;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add service defaults & Aspire client integrations.
 builder.AddServiceDefaults();
+builder.Services.AddDbContext<UserDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("UserDbConnection")));
 
 // Add services to the container.
 builder.Services.AddProblemDetails();
