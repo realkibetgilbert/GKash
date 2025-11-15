@@ -1,11 +1,14 @@
+using LoanService.Application.Features.Loans.Handlers;
+using LoanService.Domain.Interfaces;
 using LoanService.Infrastructure.Persistence;
+using LoanService.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
 
-var connectionString = builder.Configuration.GetConnectionString("LoanDbConnection");
+var connectionString = builder.Configuration.GetConnectionString("GkashDbConnection");
 
 if (string.IsNullOrEmpty(connectionString))
 {
@@ -21,7 +24,10 @@ else
 }
 builder.Services.AddDbContext<LoanDbContext>(options =>
     options.UseSqlServer(connectionString));
+builder.Services.AddScoped<ILoanRepository, LoanRepository>();
 // Add services to the container.
+builder.Services.AddMediatR(cfg =>
+    cfg.RegisterServicesFromAssembly(typeof(ApplyLoanCommandHandler).Assembly));
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi

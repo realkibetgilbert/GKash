@@ -16,11 +16,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GKash.ServiceDefaults\GKash.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\LoanService.Application\LoanService.Application.csproj" />
     <ProjectReference Include="..\LoanService.Infrastructure\LoanService.Infrastructure.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>

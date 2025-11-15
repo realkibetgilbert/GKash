@@ -7,9 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add service defaults & Aspire client integrations.
 builder.AddServiceDefaults();
 builder.Services.AddDbContext<UserDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("UserDbConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("GkashDbConnection")));
 builder.Services.AddDbContext<LoanDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("LoanDbConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("GkashDbConnection")));
 // Add services to the container.
 builder.Services.AddProblemDetails();
 

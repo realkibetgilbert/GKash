@@ -8,7 +8,7 @@ using UserService.Infrastructure.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
-var connectionString = builder.Configuration.GetConnectionString("UserDbConnection");
+var connectionString = builder.Configuration.GetConnectionString("GkashDbConnection");
 
 if (string.IsNullOrEmpty(connectionString))
 {
