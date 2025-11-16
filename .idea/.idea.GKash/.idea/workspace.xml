@@ -15,7 +15,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d0a6156-dc75-4a29-ab74-d8e249b077dc" name="Changes" comment="" />
+    <list default="true" id="2d0a6156-dc75-4a29-ab74-d8e249b077dc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/GKash.Web/Components/Layout/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/GKash.Web/Components/Layout/MainLayout.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GKash.Web/Components/Layout/MainLayout.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/GKash.Web/Components/Layout/MainLayout.razor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GKash.Web/Components/Pages/Home.razor" beforeDir="false" afterPath="$PROJECT_DIR$/GKash.Web/Components/Pages/Home.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GKash.Web/Components/_Imports.razor" beforeDir="false" afterPath="$PROJECT_DIR$/GKash.Web/Components/_Imports.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GKash.Web/wwwroot/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/GKash.Web/wwwroot/app.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,8 +50,8 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/GKash.Web/Components/Layout/Header.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/tarus/Desktop/personal/ideas/GKash/GKash.Web/Components/Pages/Home.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GKash.Web/Components/Pages/Advantages.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/tarus/Desktop/personal/ideas/GKash/GKash.Web/Components/_Imports.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GKash.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GKash.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/GKash.Web/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map" root0="FORCE_HIGHLIGHTING" />
@@ -73,6 +79,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "master-web",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
