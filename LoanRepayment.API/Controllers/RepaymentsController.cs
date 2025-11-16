@@ -26,8 +26,8 @@ namespace LoanRepayment.API.Controllers
                 dto.DueDate
             );
 
-            var repaymentId = await _mediator.Send(command);
-            return Ok(new { RepaymentId = repaymentId });
+            await _mediator.Send(command);
+            return Ok();
         }
     }
 }
