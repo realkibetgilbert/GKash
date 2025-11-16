@@ -1,43 +1,25 @@
+/* Hero Section */
 .hero-section {
     background: url('/images/hero.jpeg') center/cover no-repeat;
     min-height: 70vh;
     width: 100%;
     position: relative;
+    padding: 0 10vw;          /* horizontal padding same as advantages section */
+    display: flex;
+    align-items: center;       /* vertical center content */
+    box-sizing: border-box;
 }
 
-@media(max-width: 767px) {
-    .hero-section {
-        background: url('/images/hero-mobile.jpeg') center/cover no-repeat;
-        /*min-height: 40vh;*/
-    }
-
-    .hero-text-wrapper {
-        text-align: center;  
-        margin-top: 20rem;   
-    }
-
-    .hero-title {
-        font-size: 0.5rem;
-    }
-
-    .hero-btn {
-        width: 100%;
-        padding: 0.8rem 1rem !important;
-        background-color: #F6D768 !important;
-    }
+.hero-text-wrapper {
+    width: 100%;               /* take full width of padded area */
+    box-sizing: border-box;
 }
 
-/* Desktop / medium+ screens */
+/* Hero text & button */
 .hero-title {
     font-size: 2.2rem;
     font-weight: 500;
     line-height: 1.35;
-}
-
-@media(min-width: 768px) {
-    .hero-title {
-        font-size: 3.2rem;
-    }
 }
 
 .hero-btn {
@@ -49,12 +31,21 @@
     background-color: #F6D768;
 }
 
+.hero-btn:hover,
+.btn-warning.hero-btn:hover {
+    background-color: #F6D768 !important;
+    color: darkgray !important;
+    opacity: 1 !important;
+    box-shadow: none !important;
+    filter: none !important;
+}
 
-/*Advantages Section*/
+/* Advantages Section */
 .advantages-section {
-    background-color: #f5f5f5;
-    padding: 80px 20px;
+    background-color: #FFFFFF;
+    padding: 80px 10vw; /* same horizontal padding as hero */
     min-height: 50vh;
+    box-sizing: border-box;
 }
 
 .advantages-title {
@@ -69,28 +60,16 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
+    width: 100%;
 }
 
 .advantage-card {
     background: white;
     border-radius: 12px;
     padding: 35px 30px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px rgba(35, 90, 172, 0.2); /* stronger shadow */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-.hero-btn:hover,
-.btn-warning.hero-btn:hover {
-    background-color: #F6D768 !important;
-    color: darkgray !important;
-    opacity: 1 !important;
-    box-shadow: none !important;
-    filter: none !important;
-}
-
 
 .card-header {
     display: flex;
@@ -111,8 +90,9 @@
 }
 
 .card-description {
-    color: #5a5a5a;
-    font-size: 1.3rem;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 500;
     line-height: 1.5;
     margin-bottom: 20px;
 }
@@ -125,7 +105,7 @@
 
 .card-list li {
     color: #5a5a5a;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 10px;
     padding-left: 20px;
@@ -140,13 +120,33 @@
     font-size: 0.8rem;
 }
 
-@media (max-width: 768px) {
-    .advantages-title {
-        font-size: 2rem;
+/* Mobile Responsive */
+@media (max-width: 767px) {
+    .hero-section {
+        background: url('/images/hero-mobile.jpeg') center/cover no-repeat;
+        padding: 0 5vw;  /* smaller padding on mobile */
     }
 
-    .advantages-container {
-        grid-template-columns: 1fr;
+    .hero-text-wrapper {
+        text-align: center;
+        margin-top: 10rem;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-btn {
+        width: 100%;
+        padding: 0.8rem 1rem !important;
+    }
+
+    .advantages-section {
+        padding: 60px 5vw; /* match hero padding on mobile */
+    }
+
+    .advantages-title {
+        font-size: 2rem;
     }
 
     .advantage-card {
@@ -154,3 +154,179 @@
     }
 }
 
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 3.2rem;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Borrow Section*/
+.container {
+    background-color: #f5f5f5;
+    min-height: 50vh;
+    padding: 60px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.title {
+    text-align: center;
+    color: #2a5a9e;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 80px;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto 100px;
+    flex-wrap: wrap;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 320px;
+}
+
+.step-number {
+    background-color: #2a5a9e;
+    color: white;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.step-content {
+    padding-top: 8px;
+}
+
+.step-title {
+    color: #333;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.step-description {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.download-section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.download-text {
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.store-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.store-button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.store-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.app-store {
+    background-color: #000;
+}
+
+.galaxy-store {
+    background: linear-gradient(135deg, #e91e8c 0%, #8e2de2 100%);
+}
+
+.android-store {
+    background-color: #1a1a1a;
+}
+
+.oppo-store {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+}
+
+.oppo-store div {
+    color: #00A862;
+}
+
+.store-label {
+    font-size: 11px;
+    opacity: 0.9;
+    color: white;
+}
+
+.oppo-store .store-label {
+    color: #666;
+}
+
+.store-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+}
+
+.oppo-store .store-name {
+    color: #00A862;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 32px;
+        margin-bottom: 60px;
+    }
+
+    .steps-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .step {
+        max-width: 100%;
+    }
+
+    .store-buttons {
+        flex-direction: column;
+    }
+
+    .store-button {
+        width: 100%;
+    }
+}
