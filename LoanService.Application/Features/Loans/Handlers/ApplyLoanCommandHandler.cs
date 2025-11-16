@@ -25,6 +25,7 @@ namespace LoanService.Application.Features.Loans.Handlers
                 InterestRate = InterestRate,
                 TotalPayable = request.Amount + (request.Amount * InterestRate),
                 DateApplied = DateTime.UtcNow,
+                DueDate = DateTime.UtcNow.AddDays(30),
                 DurationDays = 30,
                 Status = LoanStatus.Pending
             };

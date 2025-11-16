@@ -1,7 +1,9 @@
 using LoanService.Application.Features.Loans.Handlers;
+using LoanService.Application.Interfaces;
 using LoanService.Domain.Interfaces;
 using LoanService.Infrastructure.Persistence;
 using LoanService.Infrastructure.Repositories;
+using LoanService.Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,27 +12,17 @@ builder.AddServiceDefaults();
 
 var connectionString = builder.Configuration.GetConnectionString("GkashDbConnection");
 
-if (string.IsNullOrEmpty(connectionString))
-{
-    Console.ForegroundColor = ConsoleColor.Red;
-    Console.WriteLine("[? Aspire] No connection string was provided!");
-    Console.ResetColor();
-}
-else
-{
-    Console.ForegroundColor = ConsoleColor.Green;
-    Console.WriteLine($"[? Aspire] Connection string injected: {connectionString}");
-    Console.ResetColor();
-}
 builder.Services.AddDbContext<LoanDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddScoped<ILoanRepository, LoanRepository>();
-// Add services to the container.
 builder.Services.AddMediatR(cfg =>
     cfg.RegisterServicesFromAssembly(typeof(ApplyLoanCommandHandler).Assembly));
+builder.Services.AddHttpClient<ILoanRepaymentApi, LoanRepaymentApiClient>(client =>
+{
+    client.BaseAddress = new Uri("https://loanrepayment-api"); 
+});
 
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
