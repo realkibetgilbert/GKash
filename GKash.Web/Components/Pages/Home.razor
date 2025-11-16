@@ -1,5 +1,30 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
+<PageTitle>GKash - Home</PageTitle>
 
+<!-- Hero Section -->
+<div class="hero-section">
+    <div class="hero-text-wrapper">
+        <h1 class="hero-title mb-4 text-black">
+            Get first loan online<br>
+            within 15 minutes<br>
+            Fast and safe apply
+        </h1>
 
+        <a class="btn text-secondary hero-btn" href="/apply">
+            Apply for a loan
+        </a>
+    </div>
+</div>
+
+<Advantages/>
+<Borrow/>
+
+@code {
+    private readonly string[] Highlights = new[]
+    {
+        "Fast API-first design",
+        "Modular microservices",
+        "Blazor UI"
+    };
+}
