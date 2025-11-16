@@ -32,7 +32,7 @@ namespace UserService.API.Controllers
             var result = await _mediator.Send(new VerifyOtpCommand(req.PhoneNumber, req.Otp));
             if (result.Message != "OK") return Unauthorized(new { message = "Invalid OTP" });
 
-            // set session
+            
             HttpContext.Session.SetString("UserId", result.UserId.ToString());
             HttpContext.Session.SetString("PhoneNumber", req.PhoneNumber);
 
