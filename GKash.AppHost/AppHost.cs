@@ -22,15 +22,16 @@ builder.AddProject<Projects.UserService_API>("userservice-api")
        .WithReference(cache)
        .WaitFor(sqlConnection);
 
-builder.AddProject<Projects.LoanRepayment_API>("loanrepayment-api")
+var loanRepaymentService = builder.AddProject<Projects.LoanRepayment_API>("loanrepayment-api")
        .WithReference(sqlConnection)
        .WithReference(cache)
        .WaitFor(sqlConnection);
 
-builder.AddProject<Projects.LoanService_API>("loanservice-api")
+var loanService = builder.AddProject<Projects.LoanService_API>("loanservice-api")
       .WithReference(sqlConnection)
       .WithReference(cache)
       .WaitFor(sqlConnection);
 
+loanService.WithReference(loanRepaymentService);
 
 builder.Build().Run();

@@ -22,7 +22,7 @@ namespace LoanService.API.Controllers
             return Ok(loan);
         }
         [HttpPost("{loanId}/approve")]
-        public async Task<IActionResult> ApproveLoan(long loanId)
+        public async Task<IActionResult> ApproveLoan([FromRoute] long loanId)
         {
             var result = await _mediator.Send(new ApproveLoanCommand(loanId));
             if (!result) return BadRequest("Loan not found or not pending.");

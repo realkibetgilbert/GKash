@@ -1,7 +1,6 @@
 ﻿using LoanRepayment.Application.Dtos.Repayments;
 using LoanRepayment.Application.Features.Repayments.Commands;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LoanRepayment.API.Controllers

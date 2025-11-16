@@ -41,7 +41,7 @@ namespace LoanService.Infrastructure.ModelConfigurations
                    .HasMaxLength(20)
                    .HasDefaultValue(LoanStatus.Pending);
 
-            builder.HasIndex(l => l.UserId);
+            builder.HasIndex(l => l.UserId).IsUnique();
         }
     }
 }
